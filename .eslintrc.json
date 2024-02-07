@@ -1,3 +1,84 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true,
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "default-param-last": "off",
+    "no-underscore-dangle": "off",
+    "max-classes-per-file": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".ts",
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-this-in-sfc": "off",
+    "react/state-in-constructor": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "class-methods-use-this": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "global-require": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-irregular-whitespace": "warn",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-extra-boolean-cast": "off",
+    "no-restricted-exports": "off",
+    "prettier/prettier": 2
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

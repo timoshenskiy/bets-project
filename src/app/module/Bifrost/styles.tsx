@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -52,7 +52,8 @@ const Content = styled.div`
   height: 100%;
 `;
 
-const LoaderWrapper = styled.div`
+const LoaderWrapper = styled.div<{ isLoading: boolean;}>(
+    ({ isLoading }) => css`
   position: absolute;
   top: 0;
   left: 0;
@@ -63,10 +64,10 @@ const LoaderWrapper = styled.div`
   justify-content: center;
   animation-timing-function: ease;
   animation-duration: 1.0s;
-  display: ${({ isLoading }: any) => isLoading ? 'flex' : 'none'};
+  display: ${isLoading ? 'flex' : 'none'};
   background: #000;
   animation-fill-mode: forwards;
-`;
+`);
 
 const Loader = styled.div`
   width: 80px;

@@ -1,3 +1,4 @@
+'use client';
 import React, {useEffect, useRef, useState} from 'react';
 import ReactJson from 'react-json-view'
 import S from './styles';
@@ -58,7 +59,7 @@ const Bifrost = ({ }: BifrostProps) => {
     }
 
     const iframeUrlParams = jsonToQueryString(data);
-    const iframeHeight = typeof window !== undefined ? `${window?.innerHeight}px` : '500px';
+    const iframeHeight = typeof window !== "undefined" ? `${window?.innerHeight}px` : '500px';
     const iframeSrc = `${SOURCE_URL}&${iframeUrlParams}`;
 
     return (
